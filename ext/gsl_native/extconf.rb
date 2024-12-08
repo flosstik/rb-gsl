@@ -83,7 +83,7 @@ def gsl_gem_config(target, dir = 'ext')
                                        $LDFLAGS.include?('-Wl,--no-undefined')
 end
 
-$CFLAGS += ' -Wall -Iinclude'
+$CFLAGS += ' -Wall -Iinclude -Wno-incompatible-function-pointer-types -Wno-deprecated-non-prototype'
 
 gsl_config_arg(:version) { |version, check|
   gsl_def(:GSL_VERSION, check[version])
